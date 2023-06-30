@@ -21,7 +21,7 @@ jobs:
         pip install pylint-exit
     - name: Analysing the code with pylint
       run: |
-        pylint $(git ls-files '*.py') || pylint-exit $?
+        pylint $(git ls-files '*.py') || pylint-exit --error-fail --warn-fail $?
         if [ $? -ne 0 ]; then
         echo "An error occurred while running pylint." >&2
         exit 1
