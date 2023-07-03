@@ -38,7 +38,7 @@ jobs:
         with:
           push: true
           tags: |
-            ${{ env.GITHUB_REGISTRY }}/${{ env.GITHUB_REPOSITORY }}:${{ env.DOCKER_IMAGE_TAG }}
+            ${{ env.GITHUB_REGISTRY }}/${{ env.OWNER_LC }}/${{ github.event.repository.name }}:${{ env.DOCKER_IMAGE_TAG }}
           
   scan_docker_image:
     permissions:
