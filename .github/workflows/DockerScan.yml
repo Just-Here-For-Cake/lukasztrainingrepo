@@ -1,3 +1,4 @@
+name: DockerScan
 
 on: [push]
 
@@ -54,7 +55,8 @@ jobs:
           push: true
           tags: |
             ${{ env.GITHUB_REGISTRY }}/${{ env.GITHUB_REPOSITORY }}:${{ env.DOCKER_IMAGE_TAG }}
-            
+          
+          
   scan_docker_image:
     permissions:
       id-token: read
